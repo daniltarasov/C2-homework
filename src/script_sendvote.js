@@ -1,6 +1,7 @@
 const btn_cats = document.querySelector('.btn-cats');
 const btn_parrots = document.querySelector('.btn-parrots');
 const btn_dogs = document.querySelector('.btn-dogs');
+const message = document.querySelector('.message');
 
 function sendVote (animal){
     fetch(`https://sf-pyw.mosyag.in/sse/vote/${animal}`, 
@@ -9,6 +10,11 @@ function sendVote (animal){
         mode: 'no-cors',
         })
     console.log(`проголосовано за ${animal}`)
+    // message.innerHTML = "Голос принят"
+
+    message.style.cssText = `visibility: visible;`
+
+
     }
 
 btn_parrots.onclick = function () {
